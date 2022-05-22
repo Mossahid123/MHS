@@ -31,12 +31,13 @@ const Navbar = () => {
                 </div>
                 <Link to='/home' className="btn btn-ghost  text-xl">daisyUI</Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-start hidden lg:flex">
                 <ul className='menu menu-horizontal p-0'>
                     {menuItems}
                 </ul>
             </div>
             <div className="navbar-end">
+                <Link to='/dashboard'>Dashboard</Link>
             <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
             </div>
         </div>

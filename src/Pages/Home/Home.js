@@ -1,13 +1,17 @@
 import React from 'react';
 import Footer from '../../Shared/Footer';
 import Banner from './Banner';
-import PartsCard from './PartsCard';
+import Parts from './Parts';
+import Reviews from './Reviews';
+import Summary from './Summary';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
-            <PartsCard></PartsCard>
+            <Parts></Parts>
+            <Summary></Summary>
+            <Reviews></Reviews>
             <Footer></Footer>
         </div>
     );
