@@ -21,7 +21,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     if (user || gUser) {
-        navigate('/appointment');
+        navigate('/home');
     }
 
 
