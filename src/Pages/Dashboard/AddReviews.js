@@ -31,17 +31,17 @@ const AddReviews = () => {
     }
 
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-3'>
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" value={user?.displayName} class="input input-bordered w-full max-w-xs" />
-                    <textarea class="textarea textarea-bordered" name='comments' placeholder="Write Your Comments"></textarea>
-                    <input type="text" name='retting' placeholder="Ratting" class="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='picture' placeholder="image url" class="input input-bordered w-full max-w-xs" />
-                    <button class="btn btn-ghost  btn-outline">Button</button>
+                    <input type="text" value={user?.displayName} className="input input-bordered w-full max-w-xs" />
+                    <textarea className="textarea textarea-bordered" name='comments' placeholder="Write Your Comments"></textarea>
+                    <input type="text" name='retting' placeholder="Ratting" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='picture' placeholder="image url" className="input input-bordered w-full max-w-xs" />
+                    <button className="btn btn-ghost  btn-outline">Button</button>
                 </form>
 
             </div>
