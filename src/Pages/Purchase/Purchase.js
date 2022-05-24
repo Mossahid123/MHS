@@ -24,7 +24,10 @@ const Purchase = () => {
                     <p>{description}</p>
                     <p>Minimum Order : {order}</p>
                     <div className="card-actions">
-                        <label htmlFor="purchase-modal" className="btn modal-button">Purchase</label>
+                        <label 
+                        htmlFor="purchase-modal"
+                         
+                        className="btn modal-button">Purchase</label>
                     </div>
                     {part && <PurchaseModal
                         key={part._id}

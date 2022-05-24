@@ -12,9 +12,9 @@ const Reviews = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
-                reviews.map(review =><Review
-                key={review._id}
-                review={review}
+                reviews.map(reviews =><Review
+                key={reviews._id}
+                reviews={reviews}
                 ></Review>)
             }
         </div>

@@ -1,14 +1,18 @@
 import React from 'react';
 
-const Review = ({review}) => {
+const Review = ({reviews}) => {
+    const { review, name, picture, retting } = reviews;
     return (
         <div className="card w-96 bg-primary text-primary-content">
             <div className="card-body">
-                <h2 className="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn">Buy Now</button>
+                <p>{review}</p>
+                <div class="avatar">
+                    <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={picture} alt='' />
+                    </div>
+                    <p className=''>{name}</p>
                 </div>
+                <p>{retting}</p>
             </div>
         </div>
     );

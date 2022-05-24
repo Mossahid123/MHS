@@ -5,7 +5,7 @@ import Loading from '../../Shared/Loading';
 
 const PurchaseModal = ({ part, setPart }) => {
     const { quantity, name, price, _id } = part;
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     if(loading){
         return <Loading></Loading>
