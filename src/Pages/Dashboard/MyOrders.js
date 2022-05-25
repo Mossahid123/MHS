@@ -10,21 +10,38 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders?buyer=${user.email}`,{
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth);
-                    localStorage.removeItem('accessToken');
-                    navigate('/');
-                }
-                return res.json()})
-            .then(data => setOrders(data));
+      if(user)
+       {
+        fetch(`http://localhost:5000/myorders?email=${user.email}`,{
+          method: 'GET',
+          headers: {
+              'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+          }
+      })
+          .then(res => {
+              if (res.status === 401 || res.status === 403) {
+                  signOut(auth);
+                  localStorage.removeItem('accessToken');
+                  navigate('/');
+              }
+              return res.json()})
+          .then(data => setOrders(data));
+       }
     }, [user])
+    const handleDelete = _id => {
+      const proceed = window.confirm('Delete tha product !!')
+      if (proceed) {
+          fetch(`http://localhost:5000/myorders/${_id}`, {
+              method: "DELETE"
+          })
+              .then(res => res.json())
+              .then(data => {
+                  console.log(data);
+                  const remaining = orders.filter(order => order._id !== _id)
+                  setOrders(remaining)
+              })
+
+      }}
     return (
         <div>
             <h2>my order</h2>
@@ -36,14 +53,18 @@ const MyOrders = () => {
         <th>Name</th>
         <th>Order</th>
         <th>Price</th>
+        <th>Payment</th>
+        <th>Cancle</th>
       </tr>
     </thead>
     <tbody>
       {orders.map((order,index) => <tr key={order._id}>
         <th>{index+1}</th>
-        <td>{order.buyer}</td>
-        <td>{order.parts}</td>
+        <td>{order.client}</td>
+        <td>{order.email}</td>
         <td>{order.price}</td>
+        <td><button className='btn btn-xs '>Pay</button></td>
+        <td><button onClick={()=>handleDelete(order._id)} className='btn btn-xs'>Cancle</button></td>
       </tr>)}
     </tbody>
   </table>
