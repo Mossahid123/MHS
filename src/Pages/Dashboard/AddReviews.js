@@ -31,7 +31,7 @@ const AddReviews = () => {
     }
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-50 mx-auto bg-base-100 shadow-xl">
             <div className="card-body">
                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-3'>
                     <label className="label">

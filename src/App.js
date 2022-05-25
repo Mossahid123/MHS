@@ -10,13 +10,16 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth';
+import AddProduct from './Pages/AddProduct/AddProduct';
+import ManageProducts from './Pages/AddProduct/ManageProducts';
 import Purchase from './Pages/Purchase/Purchase';
 import Navbar from './Shared/Navbar';
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto px-12">
+    <div className="max-w-7xl mx-auto">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -26,8 +29,10 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='my-review' element={<AddReviews></AddReviews>}></Route>
           <Route path='my-profile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='making-admin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='making-admin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
         </Route>
+        <Route path='add-product' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+        <Route path='manage-product' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
       </Routes>
