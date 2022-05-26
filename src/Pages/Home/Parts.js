@@ -11,7 +11,7 @@ const Parts = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
           {
-              parts.map(part => <PartsCard
+              parts.slice(0 , 6).map(part => <PartsCard
               key={part._id}
               part={part}
               ></PartsCard>)

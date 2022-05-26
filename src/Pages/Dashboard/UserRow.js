@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-
+import Swal from 'sweetalert2'
 const UserRow = ({ user,refetch }) => {
     const [users , setUsers]=useState([])
-    const{email,role }=user;
+    const {email , role }=user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
@@ -26,7 +26,23 @@ const UserRow = ({ user,refetch }) => {
         }
 
             const handleDelete = email =>{
-                const deleted = window.confirm('Delete tha product !!')
+                const deleted =Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                      )
+                    }
+                  })
                if(deleted){
                 fetch(`http://localhost:5000/user/${email}`, {
                     method: "DELETE"
@@ -45,7 +61,7 @@ const UserRow = ({ user,refetch }) => {
             <tr>
                 <th>1</th>
                 <td>{email}</td>
-                <td>{role!== 'admin'&& <button  className='btn btn-xs' onClick={makeAdmin}>Make Admin</button>}</td>
+                <td>{role!=="admin" && <button  className='btn btn-xs' onClick={makeAdmin}>Make Admin</button>}</td>
                 <td><button onClick={() =>handleDelete(user.email)} className='btn btn-xs'>Remove User</button></td>
             </tr>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
 import useProducts from '../../Hooks/useProducts';
 
@@ -6,7 +7,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useProducts();
     console.log(products)
     const handleDelete = _id => {
-        const proceed = window.confirm('Delete tha product !!')
+        const proceed = Swal.fire('Are you sure?')
         if (proceed) {
             fetch(`http://localhost:5000/parts/${_id}`, {
                 method: "DELETE"
@@ -36,9 +37,6 @@ const ManageProducts = () => {
                                         <div className='card-title'>{product.name}</div>
                                         <p>
                                             Price: ${product.price}
-                                        </p>
-                                        <p>
-                                            Supplier: {product.supplier}
                                         </p>
                                         <p>
                                             Quantity: {product.quantity}

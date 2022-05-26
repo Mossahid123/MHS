@@ -16,7 +16,7 @@ const Purchase = () => {
     return (
         <div className='flex justify-center'>
             <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img style={{width:'500px' , height:'400px'}}  src="https://api.lorem.space/image/movie?w=200&h=280" alt="Movie" /></figure>
+                <figure><img style={{width:'500px' , height:'400px'}}  src={img} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>Price : {price}</p>
@@ -32,6 +32,7 @@ const Purchase = () => {
                     {part && <PurchaseModal
                         key={part._id}
                         part={part}
+                        partId={partId}
                         setPart={setPart}
                     ></PurchaseModal>}
                 </div>
