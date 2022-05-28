@@ -19,7 +19,11 @@ const Reviews = () => {
                 reviews={reviews}
                 ></Review>)
             }
+            
         </div>
+        <div className='text-center my-10'>
+                <button className='btn'>More Review</button>
+            </div>
         </div>
     );
 };
