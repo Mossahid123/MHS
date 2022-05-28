@@ -11,7 +11,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/myorders?email=${user.email}`, {
+      fetch(`https://desolate-forest-96916.herokuapp.com/myorders?email=${user.email}`, {
         method: 'GET',
         headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const MyOrders = () => {
   const handleDelete = _id => {
     const proceed = window.confirm('Delete tha product !!')
     if (proceed) {
-      fetch(`http://localhost:5000/myorders/${_id}`, {
+      fetch(`https://desolate-forest-96916.herokuapp.com/myorders/${_id}`, {
         method: "DELETE"
       })
         .then(res => res.json())
@@ -45,7 +45,7 @@ const MyOrders = () => {
   }
   return (
     <div>
-      <h2>my order</h2>
+      <h2 className='text-4xl text-center font-bold my-8'>My Order</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -69,7 +69,7 @@ const MyOrders = () => {
                 <p><span className='text-success'>Paid</span></p>
                 <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
               </div>}
-              <td><button onClick={() => handleDelete(order._id)} className='btn btn-xs'>Cancle</button></td>
+              <td><button onClick={() => handleDelete(order._id)} className='btn btn-xs btn-error'>Cancle</button></td>
             </tr>)}
           </tbody>
         </table>

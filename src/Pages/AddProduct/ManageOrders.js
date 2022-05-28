@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://desolate-forest-96916.herokuapp.com/purchase', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,22 +22,23 @@ const ManageOrders = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
             }
-          })
+        })
         if (proceed) {
-            fetch(`http://localhost:5000/purchase/${_id}`, {
+            fetch(`https://desolate-forest-96916.herokuapp.com/purchase/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => {
                     console.log(res)
-                   return res.json()})
+                    return res.json()
+                })
                 .then(data => {
                     console.log(data);
                     const remaining = orders.filter(order => order._id !== _id)
@@ -48,7 +49,7 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <h1>All orders {orders.length}</h1>
+            <h1 className='text-4xl text-center font-bold my-12'>All orders {orders.length}</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
@@ -62,16 +63,24 @@ const ManageOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                      {
-                          orders.map((order ,index) =>  <tr>
-                            <th>{index+1}</th>
-                            <td>{order.client}</td>
-                            <td>{order.product}</td>
-                            <td>{order.price}</td>
-                            <td><button className='btn btn-xs'>Paid</button></td>
-                            <td><button className='btn btn-xs' onClick={()=>handleDelete(order._id)}>Delete</button></td>
-                        </tr>)
-                      }
+                        {
+                            orders.map((order, index) => <tr>
+                                <th>{index + 1}</th>
+                                <td>{order.client}</td>
+                                <td>{order.product}</td>
+                                <td>{order.price}</td>
+                                <td>{order.paid !== true && <span>Unpaid</span>}
+                                    {order.paid === true && <span>
+                                        <button className='btn btn-xs'><label class="swap">
+                                            <input type="checkbox" />
+                                            <div class="swap-off">Pending</div>
+                                            <div class="swap-on">shipped</div>
+                                        </label></button>
+                                    </span>}
+                                </td>
+                                <td><button className='btn btn-xs' onClick={() => handleDelete(order._id)}>Delete</button></td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>

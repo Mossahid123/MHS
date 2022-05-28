@@ -10,7 +10,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L3cEbCisHQguGSEpfSyCle192zaR0UkZFmc3h68yop1DtLRPT11RDq8WY5tMke3z86JBcPTZKpWqwDLGQnSwDv300UkPK4Pgd');
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/purchase/${id}`;
+    const url = `https://desolate-forest-96916.herokuapp.com/purchase/${id}`;
 
     const { data: order, isLoading } = useQuery(['purchase', id], () => fetch(url, {
         method: 'GET',

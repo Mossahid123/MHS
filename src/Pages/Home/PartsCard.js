@@ -20,7 +20,7 @@ const PartsCard = ({ part }) => {
                 <p>Available Quantity : {quantity}</p>
                 <p>Description : {description.slice(0, 60)}</p>
                 <div className="card-actions">
-                    <button onClick={()=>handleNavigate(_id)} className="btn btn-primary">Buy Now</button>
+                    <button onClick={()=>handleNavigate(_id)} className="btn">Buy Now</button>
                 </div>
             </div>
         </div>

@@ -11,8 +11,9 @@ const PurchaseModal = ({ part }) => {
     // console.log(part)
     const { quantity, name, price, _id, order } = part;
     const navigate = useNavigate();
+    const [orderChack , setOrderChack] =useState(false);
     const [user, loading] = useAuthState(auth);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit ,reset } = useForm();
     if (loading) {
         return <Loading></Loading>
     }
@@ -20,15 +21,19 @@ const PurchaseModal = ({ part }) => {
     const onSubmit = data => {
         console.log(data)
         if (data.orders > data.quantity) {
+            const order = setOrderChack(true);
             return Swal.fire(
                 {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'You have to order more than minimun quantity!',
                 }
+             
             )
         }
+      
         else if (data.orders < data.order) {
+            const order = setOrderChack(true);
             return Swal.fire(
                 {
                     icon: 'error',
@@ -36,9 +41,10 @@ const PurchaseModal = ({ part }) => {
                     text: 'You  order more than available quantity!',
                 }
             )
+            
         }
         else {
-            const url = "http://localhost:5000/purchase";
+            const url = "https://desolate-forest-96916.herokuapp.com/purchase";
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -134,6 +140,7 @@ const PurchaseModal = ({ part }) => {
                             {...register("address")} >
                         </textarea>
                         <button
+                        disabled={orderChack ? true : false}
                             className="btn btn-ghost  btn-outline">Add Product</button>
                     </form>
                 </div>

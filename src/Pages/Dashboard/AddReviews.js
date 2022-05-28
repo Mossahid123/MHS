@@ -17,7 +17,7 @@ const AddReviews = () => {
             picture,
             name:user.displayName
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://desolate-forest-96916.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -37,10 +37,10 @@ const AddReviews = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" value={user?.displayName} className="input input-bordered w-full max-w-xs" />
+                    <input type="text" value={user?.displayName} className="input input-bordered w-full " />
                     <textarea className="textarea textarea-bordered" name='comments' placeholder="Write Your Comments"></textarea>
-                    <input type="text" name='retting' placeholder="Ratting" className="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='picture' placeholder="image url" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='retting' placeholder="Ratting" className="input input-bordered w-full " />
+                    <input type="text" name='picture' placeholder="image url" className="input input-bordered w-full" />
                     <button className="btn btn-ghost  btn-outline">Button</button>
                 </form>
 

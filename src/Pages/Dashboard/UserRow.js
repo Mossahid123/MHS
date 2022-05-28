@@ -3,9 +3,9 @@ import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 const UserRow = ({ user,refetch }) => {
     const [users , setUsers]=useState([])
-    const {email , role }=user;
+    const {email , role,displayName }=user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://desolate-forest-96916.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -44,7 +44,7 @@ const UserRow = ({ user,refetch }) => {
                     }
                   })
                if(deleted){
-                fetch(`http://localhost:5000/user/${email}`, {
+                fetch(`https://desolate-forest-96916.herokuapp.com/user/${email}`, {
                     method: "DELETE"
                 })
                     .then(res => {
@@ -61,7 +61,7 @@ const UserRow = ({ user,refetch }) => {
             <tr>
                 <th>1</th>
                 <td>{email}</td>
-                <td>{role!=="admin" && <button  className='btn btn-xs' onClick={makeAdmin}>Make Admin</button>}</td>
+                <td>{role!=="admin" && <button  className='btn btn-xs btn-primary' onClick={makeAdmin}>Make Admin</button>}</td>
                 <td><button onClick={() =>handleDelete(user.email)} className='btn btn-xs'>Remove User</button></td>
             </tr>
     );

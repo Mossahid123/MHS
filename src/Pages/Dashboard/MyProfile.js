@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
@@ -12,16 +12,35 @@ const MyProfile = () => {
     const [address, setAddress] = useState('');
     const [updateProfile, updating, error] = useUpdateProfile(auth)
     console.log(phoneNumber);
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
-    if (updating) {
-        return <Loading></Loading>
-    }
+    const data ={phoneNumber,address}
+    // if (error) {
+    //     return (
+    //         <div>
+    //             <p>Error: {error.message}</p>
+    //         </div>
+    //     );
+    // }
+    // if (updating) {
+    //     return <Loading></Loading>
+    // }
+    useEffect(() => {
+        const email = user?.user?.email;
+        const currentUser = { email: email };
+        if (email) {
+            fetch(`https://desolate-forest-96916.herokuapp.com/user/${email}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+    }, [user]);
     return (
         <div>
             <div className='lg:flex justify-around'>

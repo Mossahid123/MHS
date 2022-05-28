@@ -11,10 +11,7 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
-                <h2 className='text-5xl text-purple-500'>Dashboard</h2>
                 <Outlet></Outlet>
-               
-
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
