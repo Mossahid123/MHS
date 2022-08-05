@@ -20,30 +20,8 @@ const PurchaseModal = ({ part }) => {
 
     const onSubmit = data => {
         console.log(data)
-        if (data.orders > data.quantity) {
-            const order = setOrderChack(true);
-            return Swal.fire(
-                {
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'You have to order more than minimun quantity!',
-                }
-             
-            )
-        }
       
-        else if (data.orders < data.order) {
-            const order = setOrderChack(true);
-            return Swal.fire(
-                {
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'You  order more than available quantity!',
-                }
-            )
-            
-        }
-        else {
+       
             const url = "https://desolate-forest-96916.herokuapp.com/purchase";
             fetch(url, {
                 method: 'POST',
@@ -66,7 +44,7 @@ const PurchaseModal = ({ part }) => {
                 })
 
         };
-    }
+
 
     return (
         <div>
@@ -140,7 +118,6 @@ const PurchaseModal = ({ part }) => {
                             {...register("address")} >
                         </textarea>
                         <button
-                        disabled={orderChack ? true : false}
                             className="btn btn-ghost  btn-outline">Add Product</button>
                     </form>
                 </div>

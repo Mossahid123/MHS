@@ -3,7 +3,8 @@ import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 const UserRow = ({ user,refetch }) => {
     const [users , setUsers]=useState([])
-    const {email , role,displayName }=user;
+    const {email , role,displayName }=user ||{}
+    console.log(email)
     const makeAdmin = () => {
         fetch(`https://desolate-forest-96916.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',

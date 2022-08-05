@@ -3,23 +3,23 @@ import { useEffect, useState } from "react"
 const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
-    useEffect( () =>{
+    useEffect(() => {
         const email = user?.email;
-        if(email){
+        if (email) {
             fetch(`https://desolate-forest-96916.herokuapp.com/admin/${email}`, {
-                method:'GET',
+                method: 'GET',
                 headers: {
                     'content-type': 'application/json',
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-            .then(res=>res.json())
-            .then(data => {
-                setAdmin(data.admin);
-                setAdminLoading(false);
-            })
+                .then(res => res.json())
+                .then(data => {
+                    setAdmin(data.admin);
+                    setAdminLoading(false);
+                })
         }
-    }, [user])
+    }, [user?.email])
 
     return [admin, adminLoading]
 }
