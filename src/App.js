@@ -20,6 +20,7 @@ import Navbar from './Shared/Navbar';
 import Payment from './Pages/Dashboard/Payment';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Blogs from './Pages/Blogs/Blogs';
+import NotFound from './Shared/NotFound';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path='manage-product' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
+        <Route path='*' element={<NotFound />} > </Route>
       </Routes>
       <ToastContainer />
     </div>
