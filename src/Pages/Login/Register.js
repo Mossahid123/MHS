@@ -45,12 +45,12 @@ const Register = () => {
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+                    <h2 className="text-center text-2xl font-bold drop-shadow-lg">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text drop-shadow-lg font-semibold">Name</span>
                             </label>
                             <input
                                 type="text"
@@ -70,7 +70,7 @@ const Register = () => {
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text drop-shadow-lg font-semibold">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -94,7 +94,7 @@ const Register = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text drop-shadow-lg font-semibold">Password</span>
                             </label>
                             <input
                                 type="password"
@@ -120,7 +120,7 @@ const Register = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
-                    <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
+                    <p><small>Already have an account? <Link className='text-blue-500 drop-shadow-lg ' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
