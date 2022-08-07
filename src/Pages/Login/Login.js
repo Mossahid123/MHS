@@ -40,12 +40,12 @@ const Login = () => {
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <h2 className="text-center text-2xl font-bold drop-shadow-lg ">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text drop-shadow-lg font-semibold">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -69,7 +69,7 @@ const Login = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text drop-shadow-lg font-semibold">Password</span>
                             </label>
                             <input
                                 type="password"
@@ -95,11 +95,11 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to MHS? <Link className='text-primary' to="/register">Create New Account</Link></small></p>
+                    <p><small>New to MHS? <Link className='text-primary drop-shadow-lg font-semibold' to="/register">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline drop-shadow-lg font-semibold"
                     >Continue with Google</button>
                 </div>
             </div>

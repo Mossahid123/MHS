@@ -120,7 +120,7 @@ const Register = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
-                    <p><small>Already have an account? <Link className='text-blue-500 drop-shadow-lg ' to="/login">Please login</Link></small></p>
+                    <p><small className='drop-shadow-lg font-semibold'>Already have an account? <Link className='text-blue-500 drop-shadow-lg ' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
