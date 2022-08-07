@@ -10,16 +10,18 @@
   
 
 ## Features
--  this is build a full-stack website
--  this website is build in react⚛️ which is most popular library of javaScript. 
-- in this website i used routing. you can go any page by using routing without reloading.😎
-_  and i used react firebase hooks wow its amazing !! you will love it ❤
--  i have used  firebase .😍
--  i also create a server site for this website 
--  i put all data in mongodb 
-- this wed has super color combination.🎨
-- i used daisy UI on this website 
-- and i create a fancy website base on parts manufacturer.
-- and also you can deal with us about computer parts 
-- you can login this page then you will see the result 😍
-- this web has also 404 not found page.❌
+-  this is build a full-stack project.
+-  this project is build in react which is most popular library of javaScript. 
+-  In this project I used routing. you can go any page by using routing without reloading.
+_  and I used react firebase hooks.
+-  I have used  firebase .
+-  I also create a server site for this project. 
+-  I put all data in mongodb. 
+-  This project has super color combination.
+-  I used tailwind css and daisy UI on this project. 
+-  I create a fancy projects base on parts manufacturer.
+-  and also you can deal with us about car parts 
+-  You can login this page then you will see the result.
+-  This web has also 404 not found page.❌
+-  It has a also admin dashboard where you can manage all product. if you are admin you can add product. You will see all product status.
+-  Admin can also make others  admin. Here is the Admin Email: user@gmail.com Password:123456
