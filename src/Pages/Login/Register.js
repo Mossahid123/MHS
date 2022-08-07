@@ -45,7 +45,7 @@ const Register = () => {
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold drop-shadow-lg">Sign Up</h2>
+                    <h2 className="text-center text-2xl font-bold drop-shadow-lg text-blue-500">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -118,13 +118,13 @@ const Register = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn w-full max-w-xs text-white bg-blue-500 hover:bg-blue-600' type="submit" value="Sign Up" />
                     </form>
                     <p><small className='drop-shadow-lg font-semibold'>Already have an account? <Link className='text-blue-500 drop-shadow-lg ' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline hover:bg-blue-500"
                     >Continue with Google</button>
                 </div>
             </div>
