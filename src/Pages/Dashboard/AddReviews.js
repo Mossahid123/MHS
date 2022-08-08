@@ -8,14 +8,13 @@ const AddReviews = () => {
     const handleSubmit = event => {
         event.preventDefault()
         const review = event.target.comments.value;
-        const retting =event.target.retting.value;
-        const picture = event.target.picture.value;
-        console.log(review,retting,picture);
-        const reviews={
+        const retting = event.target.retting.value;
+
+        console.log(review, retting);
+        const reviews = {
             review,
             retting,
-            picture,
-            name:user.displayName
+            name: user.displayName
         }
         fetch('https://desolate-forest-96916.herokuapp.com/reviews', {
             method: 'POST',
@@ -26,24 +25,22 @@ const AddReviews = () => {
         })
             .then(res => res.json())
             .then(data => {
-               console.log(data)
+                console.log(data)
             })
     }
 
     return (
-        <div className="card w-50 mx-auto bg-base-100 shadow-xl">
-            <div className="card-body">
+        <div className='bg-base-200'>
+            <h1 className='text-3xl text-black font-extrabold text-center drop-shadow-lg'>Give your <span className='text-blue-500 drop-shadow-lg'>Feedback to us</span></h1>
+            <div className="card-body w-1/4 mx-auto">
                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-3'>
-                    <label className="label">
-                        <span className="label-text">Name</span>
-                    </label>
+                    <span className="label-text text-1xl font-semibold">Name</span>
                     <input type="text" value={user?.displayName} className="input input-bordered w-full " />
                     <textarea className="textarea textarea-bordered" name='comments' placeholder="Write Your Comments"></textarea>
                     <input type="text" name='retting' placeholder="Ratting" className="input input-bordered w-full " />
-                    <input type="text" name='picture' placeholder="image url" className="input input-bordered w-full" />
-                    <button className="btn btn-ghost  btn-outline">Button</button>
-                </form>
 
+                    <button className="btn btn-outline drop-shadow-lg font-semibold">Button</button>
+                </form>
             </div>
         </div>
     );

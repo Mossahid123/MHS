@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../../Shared/Footer';
 import Loading from '../../Shared/Loading';
+import AddReviews from '../Dashboard/AddReviews';
 import Login from '../Login/Login';
 import Banner from './Banner';
 import NewFeatures from './NewFeatures';
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <Parts></Parts>
             <Summary></Summary>
+            <AddReviews></AddReviews>
             <Reviews></Reviews>
             <NewFeatures></NewFeatures>
             <OurNewProduct></OurNewProduct>

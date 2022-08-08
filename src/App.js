@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import AddReviews from './Pages/Dashboard/AddReviews';
+// import AddReviews from './Pages/Dashboard/AddReviews';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import MyOrders from './Pages/Dashboard/MyOrders';
@@ -34,7 +34,7 @@ function App() {
         <Route path='my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path='my-review' element={<AddReviews></AddReviews>}></Route>
+          {/* <Route path='my-review' element={<AddReviews></AddReviews>}></Route> */}
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path='making-admin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
