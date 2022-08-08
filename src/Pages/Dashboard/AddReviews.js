@@ -30,14 +30,14 @@ const AddReviews = () => {
     }
 
     return (
-        <div className='bg-base-200'>
-            <h1 className='text-3xl text-black font-extrabold text-center drop-shadow-lg'>Give your <span className='text-blue-500 drop-shadow-lg'>Feedback to us</span></h1>
+        <div className='bg-base-200 mt-6'>
+            <h1 className='text-5xl text-black font-extrabold text-center drop-shadow-lg '>Give your <span className='text-blue-500 drop-shadow-lg'>Feedback to us</span></h1>
             <div className="card-body w-1/4 mx-auto">
                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-3'>
                     <span className="label-text text-1xl font-semibold">Name</span>
                     <input type="text" value={user?.displayName} className="input input-bordered w-full " />
                     <textarea className="textarea textarea-bordered" name='comments' placeholder="Write Your Comments"></textarea>
-                    <input type="text" name='retting' placeholder="Ratting" className="input input-bordered w-full " />
+                    <input type="text" name='retting' placeholder="Ratting " className="input input-bordered w-full " />
 
                     <button className="btn btn-outline drop-shadow-lg font-semibold">Button</button>
                 </form>
