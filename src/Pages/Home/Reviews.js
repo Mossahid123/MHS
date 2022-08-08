@@ -11,17 +11,17 @@ const Reviews = () => {
     },[])
     return (
         <div className='mt-5'>
-            <h1 className="text-4xl text-center font-bold mb-16">Customer's Reviews</h1>
-            <h4 className='text-1xl text-center font-bold'>Comming soon...</h4>
+            <h1 className="text-4xl text-center font-bold mb-16">Customer's <span className='text-blue-500'> Reviews</span> </h1>
+           
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
 
                
-            {/* {
+            {
                 reviews.slice(0,6).map(reviews =><Review
                 key={reviews._id}
                 reviews={reviews}
                 ></Review>)
-            } */}
+            }
             
         </div>
         <div className='text-center my-10'>

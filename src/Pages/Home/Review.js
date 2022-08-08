@@ -4,19 +4,14 @@ const Review = ({ reviews }) => {
     const { review, name, picture, retting } = reviews;
     return (
         <div className='mx-auto'>
-            
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div className="avatar flex gap-4">
-                    <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={picture} alt='' />
-                    </div>
-                    <p className='mt-2'>{name}</p>
+            <div class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="flex justify-center -mt-16 md:justify-end">
+                    <img class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400" alt="Testimonial avatar" src={picture} />
                 </div>
-                <div class="card-body">
-                    <h2 class="card-title">Comment : {review}</h2>
-                    <div class="card-actions justify-end">
-                        <div class="badge badge-outline">Retting: {retting}</div>
-                    </div>
+                <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">{name}</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-200">{review}</p>
+                <div class="flex justify-end mt-4">
+                    <a href="#" class="text-xl font-medium text-blue-500 dark:text-blue-300">Retting : {retting}</a>
                 </div>
             </div>
         </div>
