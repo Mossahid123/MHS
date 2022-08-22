@@ -13,11 +13,11 @@ const Reviews = () => {
         <div className='my-10'>
             <h1 className="text-4xl text-center font-bold mb-16">Customer's <span className='text-blue-500'> Reviews</span> </h1>
            
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10'>
 
                
             {
-                reviews.slice(0,6).map(reviews =><Review
+                reviews.slice(0,6).reverse().map(reviews =><Review
                 key={reviews._id}
                 reviews={reviews}
                 ></Review>)
