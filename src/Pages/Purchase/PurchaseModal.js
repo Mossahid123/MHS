@@ -22,7 +22,7 @@ const PurchaseModal = ({ part }) => {
         console.log(data)
       
        
-            const url = "https://desolate-forest-96916.herokuapp.com/purchase";
+            const url = "https://mns-server-site.onrender.com/purchase";
             fetch(url, {
                 method: 'POST',
                 headers: {

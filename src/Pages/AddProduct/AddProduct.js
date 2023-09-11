@@ -9,7 +9,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url = "https://desolate-forest-96916.herokuapp.com/parts";
+        const url = "https://mns-server-site.onrender.com/parts";
         fetch(url, {
             method: 'POST',
             headers: {

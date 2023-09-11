@@ -8,7 +8,7 @@ const Purchase = () => {
     const [part, setPart] = useState({})
     const { img, name, price, quantity, description, order } = part;
     useEffect(() => {
-        fetch(`https://desolate-forest-96916.herokuapp.com/parts/${partId}`)
+        fetch(`https://mns-server-site.onrender.com/parts/${partId}`)
             .then(res => res.json())
             .then(data => setPart(data))
     }, [partId])

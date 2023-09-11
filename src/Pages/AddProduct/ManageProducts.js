@@ -10,7 +10,7 @@ const ManageProducts = () => {
     const handleDelete = _id => {
         const proceed = Swal.fire('Are you sure?')
         if (proceed) {
-            fetch(`https://desolate-forest-96916.herokuapp.com/parts/${_id}`, {
+            fetch(`https://mns-server-site.onrender.com/parts/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => {

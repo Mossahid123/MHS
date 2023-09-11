@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('https://desolate-forest-96916.herokuapp.com/purchase', {
+        fetch('https://mns-server-site.onrender.com/purchase', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
