@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, client, email } = order;
 
     useEffect(() => {
-        fetch('https://desolate-forest-96916.herokuapp.com/create-payment-intent', {
+        fetch('https://mns-server-site.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({ order }) => {
                order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://desolate-forest-96916.herokuapp.com/purchase/${_id}`, {
+            fetch(`https://mns-server-site.onrender.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

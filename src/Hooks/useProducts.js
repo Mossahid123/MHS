@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://desolate-forest-96916.herokuapp.com/parts')
+        fetch('https://mns-server-site.onrender.com/parts')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

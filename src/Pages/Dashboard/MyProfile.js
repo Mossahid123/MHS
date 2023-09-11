@@ -27,7 +27,7 @@ const MyProfile = () => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://desolate-forest-96916.herokuapp.com/user/${email}`, {
+            fetch(`https://mns-server-site.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -6,7 +6,7 @@ const UserRow = ({ user,refetch }) => {
     const {email , role,displayName }=user ||{}
     console.log(email)
     const makeAdmin = () => {
-        fetch(`https://desolate-forest-96916.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://mns-server-site.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const UserRow = ({ user,refetch }) => {
                     }
                   })
                if(deleted){
-                fetch(`https://desolate-forest-96916.herokuapp.com/user/${email}`, {
+                fetch(`https://mns-server-site.onrender.com/user/${email}`, {
                     method: "DELETE"
                 })
                     .then(res => {

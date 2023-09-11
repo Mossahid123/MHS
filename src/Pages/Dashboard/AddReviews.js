@@ -16,7 +16,7 @@ const AddReviews = () => {
             retting,
             name: user.displayName
         }
-        fetch('https://desolate-forest-96916.herokuapp.com/reviews', {
+        fetch('https://mns-server-site.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

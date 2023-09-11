@@ -32,7 +32,7 @@ const ManageOrders = () => {
             }
         })
         if (proceed) {
-            fetch(`https://desolate-forest-96916.herokuapp.com/purchase/${_id}`, {
+            fetch(`https://mns-server-site.onrender.com/purchase/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => {

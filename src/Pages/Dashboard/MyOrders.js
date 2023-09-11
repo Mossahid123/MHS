@@ -11,7 +11,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`https://desolate-forest-96916.herokuapp.com/myorders?email=${user.email}`, {
+      fetch(`https://mns-server-site.onrender.com/myorders?email=${user.email}`, {
         method: 'GET',
         headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const MyOrders = () => {
   const handleDelete = _id => {
     const proceed = window.confirm('Delete tha product !!')
     if (proceed) {
-      fetch(`https://desolate-forest-96916.herokuapp.com/myorders/${_id}`, {
+      fetch(`https://mns-server-site.onrender.com/myorders/${_id}`, {
         method: "DELETE"
       })
         .then(res => res.json())
