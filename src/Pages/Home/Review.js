@@ -1,11 +1,12 @@
 import React from 'react';
 
+
 const Review = ({ reviews }) => {
     const { review, name, picture, retting } = reviews;
     return (
 
         <a
-            className="relative block p-8 overflow-hidden border border-gray-100 rounded-lg">
+            className="relative block p-8 overflow-hidden border border-gray-500 rounded-lg h-56 w-80 hover:w-full" >
             <span
                 className="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
             ></span>

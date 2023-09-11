@@ -9,13 +9,14 @@ const Navbar = () => {
 
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    
 
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
     const menuItems = <>
-        <li><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg> Home</Link></li>
+        <li><Link to="/home"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg> Home</Link></li>
         <li>{admin && <Link to="/add-product"> <img className='h-5 w-5' src="https://img.icons8.com/material-rounded/344/shopping-cart.png" alt="" /> Add Product</Link>}</li>
         <li>{admin && <Link to="/manage-product"> <img src="https://i.ibb.co/pRKJTDy/product-icon-collection-trendy-modern-flat-linear-vector-white-background-thin-line-outline-illustra.jpg" className='w-5 h-5' alt="" /> Manage Product</Link>}</li>
         <li>{admin && <Link to="/manage-orders"> <img src="https://i.ibb.co/ZdHVFph/complete-order-icon-in-line-style-for-any-projects-vector-35249263.jpg" className='w-5 h-5' alt="" />Manage Orders</Link>}</li>
@@ -35,7 +36,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/home' className="btn btn-ghost  text-xl">MHS
+                <Link to='/' className="btn btn-ghost  text-xl">MHS
                     </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
